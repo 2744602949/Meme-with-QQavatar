@@ -5,9 +5,12 @@ import json
 import time
 import datetime
 import random
+import sys
 from PIL import Image
 from PIL import ImageDraw
 
+msg=sys.argv[2]
+command1=sys.argv[1]
 class DrawTool():
 
 	def __init__(self):
@@ -546,36 +549,14 @@ class DrawTool():
 
 
 def test():
-	testQQNum = 2150631695
+	testQQNum = msg
 
 	# 格式应为：丢[@QQ号] 或者 丢QQ号
 	# 其中的 "丢" 表示要画 "丢" 这张图，可以换成其他指令
 	# 之所以支持 "[@QQ号]" 的格式是因为在大多数 qqbot 框架中，消息中的艾特是这种格式
 
 	testCommand = [
-		"丢{}".format(testQQNum),
-		"仰望大佬{}".format(testQQNum),
-		"打拳{}".format(testQQNum),
-		"打{}".format(testQQNum),
-		"摸头{}".format(testQQNum),
-		"摸鱼{}".format(testQQNum),
-		"摸{}".format(testQQNum),
-		"敲{}".format(testQQNum),
-		"赞{}".format(testQQNum),
-		"旋转{}".format(testQQNum),
-		"吃{}".format(testQQNum),
-		"吞{}".format(testQQNum),
-		"咬[@{}]".format(testQQNum),
-		"快逃[@{}]".format(testQQNum),
-		"色色[@{}]".format(testQQNum),
-		"舔[@{}]".format(testQQNum),
-		"拍[@{}]".format(testQQNum),
-		"爬[@{}]".format(testQQNum),
-		"推[@{}]".format(testQQNum),
-		"踢[@{}]".format(testQQNum),
-		"捂脸[@{}]".format(testQQNum),
-		"踩[@{}]".format(testQQNum),
-		"脆弱{}".format(testQQNum),
+		command1+"{}".format(testQQNum),
 	]
 
 	tool = DrawTool()
